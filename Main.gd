@@ -1,5 +1,7 @@
-extends RigidBody2D
+extends Node
 
+export(PackedScene) var mob_scene
+var score
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -8,12 +10,19 @@ extends RigidBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimatedSprite.playing = true
+	randomize()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+#func _process(delta):
+#	pass
 
-func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()
+
+func game_over():
+	$MobTimer.stop()
+
+func new_game():
+	score = 0
+	$Player.start($StartPosition.position)
+	$StartTimer.start()
+	
