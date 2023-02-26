@@ -15,25 +15,22 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 39.0223
-height = 35.9269
+radius = 13.9663
+height = 16.0561
 
 [node name="Mob" type="RigidBody2D"]
-position = Vector2( 209, 133 )
+position = Vector2( 192, 136 )
 gravity_scale = 0.0
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 rotation = -0.00200059
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 1 )
 animation = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -14, 4 )
+position = Vector2( -5, 1 )
 rotation = 0.00280674
 shape = SubResource( 2 )
 
